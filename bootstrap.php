@@ -11,7 +11,7 @@ use Doctrine\ORM\EntityManager;
 require_once "vendor/autoload.php";
 
 $isDevMode = true;
-$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/models"), $isDevMode);
+$config = Setup::createAnnotationMetadataConfiguration(array(__DIR__ . "/source/models"), $isDevMode);
 
 // database configuration parameters
 $conn = array(
