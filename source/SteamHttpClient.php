@@ -9,7 +9,7 @@
 
 class SteamHttpClient
 {
-    // method for getting catalog of games
+    // method for getting catalog of Steam games
     public static function getAllApps() {
         $client = new GuzzleHttp\Client();
         $response = $client->get('http://api.steampowered.com/ISteamApps/GetAppList/v2');
