@@ -5,7 +5,7 @@
 date_default_timezone_set('Europe/Moscow');
 require_once 'vendor/autoload.php';
 require_once 'bootstrap.php';
-require_once 'SteamGamesParser.php';
+require_once 'source/SteamGamesCSVCreator.php';
 
 
 $filename = __DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
@@ -15,12 +15,11 @@ if (php_sapi_name() === 'cli-server' && is_file($filename)) {
 
 $app = new Silex\Application();
 $app['debug'] = true;
+$file_dir = (new SteamGamesCSCreator($entityManager))->getFilePath();
 
 
-// /GetGames возвращает csv файл с данными о приложениях
+// /GetGames return link on csv file with data about games
 $app->get('/GetGames', function() {
-
-    //Получение данных в формате csv 
     $csv = "";
     return $csv;
 });

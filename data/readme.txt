@@ -1,0 +1,1 @@
+This directory contains csv file 'steamgames.csv' created automatically in SteamGamesParser.php

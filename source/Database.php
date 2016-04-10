@@ -5,9 +5,9 @@
  * Date: 08.04.16
  * Time: 17:51
  */
-require_once "models/Game.php";
-require_once "models/Developer.php";
-require_once "models/Genre.php";
+require_once "../models/Game.php";
+require_once "../models/Developer.php";
+require_once "../models/Genre.php";
 
 
 
