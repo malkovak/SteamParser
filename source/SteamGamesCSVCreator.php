@@ -1,7 +1,7 @@
 <?php
 
 
-class SteamGamesCSCreator
+class SteamGamesCSVCreator
 {
     protected $entityManager;
     public function __construct(\Doctrine\ORM\EntityManager $entityManager) {
@@ -12,8 +12,8 @@ class SteamGamesCSCreator
     $this->createCSV($steam_games);
 }
 
-    public function getFilePath() {
-        return 'data/steamgames.csv';
+    public function getFile() {
+        return 'data/games.csv';
     }
     private function getSteamGames() {
         $sql = "SELECT games.name, games.about_the_game,".
@@ -35,7 +35,7 @@ class SteamGamesCSCreator
     }
 
     private function createCSV($steam_games_array) {
-        $fp = fopen('data/steamgames.csv', 'w');
+        $fp = fopen('data/games.csv', 'w');
         //fix for UTF-8 Excel
         fputs($fp, $bom =( chr(0xEF) . chr(0xBB) . chr(0xBF) ));
         //Captions
