@@ -10,7 +10,7 @@ require_once "source/Database.php";
 require_once "bootstrap.php";
 
 
-//get all Steam apps
+//get all Steam apps (id, name)
 $games = SteamHttpClient::getAllApps();
 foreach ($games as $game) {
     //get information about game
